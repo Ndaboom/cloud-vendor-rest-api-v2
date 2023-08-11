@@ -11,8 +11,6 @@ public class CloudVendorAPIService {
     @GetMapping("{vendorId}")
     public CloudVendor getCloudVendorDetails(String vendorId){
         return cloudVendor;
-//        return new CloudVendor("C1","Vendor 1", "Address One",
-//                "XXX-XXX-XXX");
     }
 
     @PostMapping
