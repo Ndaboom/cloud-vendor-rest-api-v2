@@ -1,5 +1,10 @@
 package com.cyberclick.restapiv2.models;
 
+import jakarta.persistence.Entity;
+import jakarta.persistence.Table;
+
+@Entity
+@Table(name="cloud_vendor_info")
 public class CloudVendor {
 
     private String vendorId;
