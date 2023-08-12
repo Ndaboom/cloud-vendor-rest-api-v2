@@ -1,5 +1,6 @@
 package com.cyberclick.restapiv2.service.impl;
 
+import com.cyberclick.restapiv2.exception.CloudVendorNotFoundException;
 import com.cyberclick.restapiv2.models.CloudVendor;
 import com.cyberclick.restapiv2.repository.CloudVendorRepository;
 import com.cyberclick.restapiv2.service.CloudVendorService;
@@ -40,6 +41,8 @@ public class CloudVendorServiceImpl implements CloudVendorService {
     @Override
     public CloudVendor getCloudVendor(String cloudVendorId) {
         // More logics here
+        if(cloudVendorRepository.findById(cloudVendorId).isEmpty())
+            throw new CloudVendorNotFoundException("Requested cloud vendor does not exist");
         return cloudVendorRepository.findById(cloudVendorId).get();
     }
 

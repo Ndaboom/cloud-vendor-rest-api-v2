@@ -32,7 +32,7 @@ public class CloudVendorController {
         return "Cloud Vendor Created Successfully";
     }
 
-    @PutMapping
+    @PutMapping()
     public String updateCloudVendorDetails(@RequestBody CloudVendor cloudVendor)
     {
         cloudVendorService.updateCloudVendor(cloudVendor);
